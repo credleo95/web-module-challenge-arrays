@@ -113,7 +113,8 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
-   return array.pop() ;
+   array.pop() ;
+   return array ; 
 }
 console.log(removeLastFlavor(originalFlavors));
 
@@ -151,7 +152,9 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array,string){
-return array.splice(string);
+    const index = array.indexOf(string);
+    array.splice(index,1);
+       return array ;
 }
 console.log(removeFlavorByName(originalFlavors,"Rocky Road"));
 
@@ -177,12 +180,17 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
+// array.map(function(currentValue, index, arr), thisValue)
+
 function filterByWord(array, string){
-if (array.includes(string)){
-    return array.includes(string);
+    const filteredArray= [];
+    for (let i = 0; i < array.length ; i++){  
+         if (array[i].includes(string)){
+            filteredArray.push(array[i]);
 }
+} return filteredArray; 
 }
-console.log(originalFlavors,"Chocolate");
+console.log(filterByWord(originalFlavors,"chocolate"));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
